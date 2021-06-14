@@ -51,7 +51,7 @@ void random_patern(int16_t delay_value) {
     }
     if (row++ > 8) {
       row = 1;
-    }
+  }
 
     mx.write(row, random(0, 255));
     // my_matrix.brightness(i>>4);
@@ -79,13 +79,12 @@ void one_by_one(int delay_value) {  // int16_t delay_value
 /***********************************/
 
 void setup() {
-  Serial.begin(9600);
+  //Serial.begin(9600);
 
   /** Matrix **/
   mx.begin();
   mx.brightness(5);
   mx.clear();
-  mx.write(row, 0);  //?
 }
 
 void loop() {
@@ -94,7 +93,10 @@ void loop() {
     row++;
     column = 1;
   }*/
+  delay(100);
+  one_by_one(500);
 
+/*
   mx.write(row + 1, matrix[row]);
 
   Serial.print("r=");
@@ -106,6 +108,7 @@ void loop() {
     matrix[row+1] = matrix[row+1] + 1;
   }
   matrix[row] = matrix[row] + 1;
+*/
 
 /*
   for (uint8_t i = 0; i < 9; i++) {
